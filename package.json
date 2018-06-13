@@ -10,7 +10,7 @@
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
-    "dev": "node .electron-vue/dev-runner.js",
+    "start": "node .electron-vue/dev-runner.js",
     "e2e": "yarn build && yarn pack && mocha test/e2e",
     "pack": "yarn pack:main && yarn pack:renderer",
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
@@ -53,12 +53,20 @@
     }
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/vue-fontawesome": "^0.0.23",
+    "@narven/onyx": "/Users/pedromsluz/Projects/narven/onyx/onyx-lib",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "simplemde": "^1.11.2",
+    "uuid": "^3.2.1",
+    "nedb": "^1.8.0"
   },
   "devDependencies": {
+    "@types/nedb": "^1.8.5",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-istanbul": "^4.1.1",
@@ -77,7 +85,7 @@
     "devtron": "^1.4.0",
     "electron": "^1.8.4",
     "electron-builder": "^19.46.5",
-    "electron-debug": "^1.4.0",
+    "electron-debug": "1.4.0",
     "electron-devtools-installer": "^2.2.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
